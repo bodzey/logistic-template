@@ -70,8 +70,15 @@ ol {
 
 	color: #fff;
 	text-decoration: none;
-}
 
+	transition: background-color 0.2s linear;
+}
+.nav__link:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+.nav__link.active:hover {
+	background-color: #4e83ff;
+}
 .nav__link.active {
 	background-color: #004af2;
 }
@@ -90,6 +97,8 @@ ol {
 .intro__text {
 	text-align: right;
 	margin-bottom: 45px;
+
+	pointer-events: none;
 }
 .intro__countries {
 	font-size: 15px;
@@ -230,7 +239,7 @@ ol {
 	font-size: 90px;
 	font-weight: 900;
 	line-height: 1;
-	color: rgba(44, 44, 44, 0.05);
+	color: rgba(44, 44, 44, 0.1);
 
 	position: absolute;
 	bottom: 15px;

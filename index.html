@@ -8,29 +8,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=PT+Sans:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
     <title>Logistic Design</title>
 </head>
 
 <body>
 <div class="page">    
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
-                <a href="/index.html"><img src="/assets/img/logo.svg" alt="" class="logo"></a>
-                <nav class="nav">
-                    <a class="nav__link active" href="#">Services</a>
-                    <a class="nav__link" href="#">Clients</a>
-                    <a class="nav__link" href="#">Benefits</a>
-                    <a class="nav__link" href="#">Team</a>
-                    <a class="nav__link" href="#">News</a>
+                <a data-scroll="#intro" href="#"><img src="/assets/img/logo.svg" alt="" class="logo img"></a>
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="#" data-scroll="#services">Services</a>
+                    <a class="nav__link" href="#" data-scroll="#clients">Clients</a>
+                    <a class="nav__link" href="#" data-scroll="#benefits">Benefits</a>
+                    <a class="nav__link" href="#" data-scroll="#team">Team</a>
+                    <a class="nav__link" href="#" data-scroll="#mission">Our Mission</a>
+                    <a class="nav__link" href="#" data-scroll="#news">News</a>
                     <a class="nav__link" href="/blog.html">Blog</a>
                     <a class="nav__link" href="#">Contact Us</a>
                 </nav>
+
+                <button class="burger" type="button">
+                    <img class="burger__icon" src="/assets/img/burger.svg" alt="">
+                </button>
+
             </div>
         </div><!--/container -->
     </header>
     <!-- Intro -->
-    <div class="intro">
+    <div class="intro" id="intro">
         <div class="container">
             <div class="intro__inner">
                 <div class="request-form request-form--intro">
@@ -72,7 +80,9 @@
             </div>
         </div><!-- /container -->
     </div><!-- /intro -->
-    <section class="section">
+
+    <!-- Services -->
+    <section class="section" id="services" data-scrollspy="#services">
         <div class="container">
             <div class="services">
                 <h2 class="services__main-title">Services</h2>
@@ -119,7 +129,7 @@
     </section>
 
     <!-- Clients -->
-    <section class="section section--map">
+    <section class="section section--map" id="clients" data-scrollspy="#clients">
         <div class="container">
             <h2 class="section__title"><span>Our</span> clients</h2>
         <div class="clients">
@@ -127,42 +137,42 @@
                 <ul class="clients__list">
                     <li>
                         <a href="#" target="_blank">
-                            <img src="/assets/img/clients/atica.svg" alt="Atica">
+                            <img class="clients__list-logo img" src="/assets/img/clients/atica.svg" alt="Atica">
                         </a>
                     </li>
                     <li>
                         <a href="#" target="_blank">
-                            <img src="/assets/img/clients/hex-lab.svg" alt="HexLab">
+                            <img class="clients__list-logo img" src="/assets/img/clients/hex-lab.svg" alt="HexLab">
                         </a>
                     </li>
                     <li>
                         <a href="#" target="_blank">
-                            <img src="/assets/img/clients/amara.svg" alt="Amara">
+                            <img class="clients__list-logo img" src="/assets/img/clients/amara.svg" alt="Amara">
                         </a>
                     </li>
                     <li>
                         <a href="#" target="_blank">
-                            <img src="/assets/img/clients/muzica-2.svg" alt="Muzica">
+                            <img class="clients__list-logo img" src="/assets/img/clients/muzica-2.svg" alt="Muzica">
                         </a>
                     </li>
                     <li>
                         <a href="#" target="_blank">
-                            <img src="/assets/img/clients/solaytic.svg" alt="Solaytic">
+                            <img class="clients__list-logo img" src="/assets/img/clients/solaytic.svg" alt="Solaytic">
                         </a>
                     </li>
                     <li>
                         <a href="#" target="_blank">
-                            <img src="/assets/img/clients/hexa.svg" alt="Hexa">
+                            <img class="clients__list-logo img" src="/assets/img/clients/hexa.svg" alt="Hexa">
                         </a>
                     </li>
                     <li>
                         <a href="#" target="_blank">
-                            <img src="/assets/img/clients/utosia-2.svg" alt="Utosia">
+                            <img class="clients__list-logo img" src="/assets/img/clients/utosia-2.svg" alt="Utosia">
                         </a>
                     </li>
                     <li>
                         <a href="#" target="_blank">
-                            <img src="/assets/img/clients/fox-hub.svg" alt="FoxHub">
+                            <img class="clients__list-logo img" src="/assets/img/clients/fox-hub.svg" alt="FoxHub">
                         </a>
                     </li>
                 </ul>
@@ -187,15 +197,17 @@
                 </div>
             </div>
         </div>
-
-        <button class="btn btn--orange btn--shadow" type="button"><span>Become a client</span></button>
-        <span class="clients-love">we love our clients</span>
+        <div class="reviews__footer">
+            <button class="btn btn--orange btn--shadow" type="button"><span>Become a client</span></button>
+            <span class="clients-love">we love our clients</span>
+        </div>
         </div>
     </section>
 
     <!-- Benefits -->
-    <div class="sections">
+    <section class="sections" id="benefits" data-scrollspy="#benefits">
         <div class="container">
+            <h2 class="section__title"><span>Our</span> benefits</h2>
             <div class="benefits">
                 <div class="benefits__col">
                     <ul class="benefits-list">
@@ -240,9 +252,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
     <!-- Team -->
-    <section class="section section--gray">
+    <section class="section section--gray" id="team" data-scrollspy="#team">
         <div class="container">
             <h2 class="section__title"><span>Our</span> team</h2>
             <div class="team">
@@ -305,7 +318,7 @@
     </section>
 
     <!-- Mission -->
-    <section class="section">
+    <section class="section" id="mission" data-scrollspy="#mission">
         <div class="container">
             <h2 class="mission-title">Our Mission</h2>
             <div class="mission">
@@ -317,7 +330,9 @@
             </div>
         </div>
     </section>
-    <section class="section section--last">
+
+    <!-- News -->
+    <section class="section section--last" id="news" data-scrollspy="#news">
         <div class="container">
             <h2 class="section__title"><span>Interesting</span> to read</h2>
             <div class="articles">
@@ -346,7 +361,9 @@
                     <time class="articles__date" pubdate="21-03-2019 19:00">21 March, 2019</time>
                 </article>
             </div>
-            <a href="/blog.html" class="btn btn--orange btn--shadow"><span>Visit blog</span></a>
+            <div class="articles__footer">
+                <a href="/blog.html" class="btn btn--orange btn--shadow"><span>Visit blog</span></a>
+            </div>
         </div>
     </section>
 
@@ -370,66 +387,73 @@
     <!-- Modals -->
     <div class="modal" id="becomeClientModal">
         <div class="modal__inner">
-            <div class="modal__header">
-                <h4 class="modal__title">Need to deliver your cargo?
-                We can help!</h4>
-                <div class="modal__text">
-                    <p>Fill a little form and we will call you back!</p>
-                </div>
+            <div class="modal__content">
+                <div class="modal__header">
+                    <h4 class="modal__title">Need to deliver your cargo?
+                    We can help!</h4>
+                    <div class="modal__text">
+                        <p>Fill a little form and we will call you back!</p>
+                    </div>
 
-                <form class="form" action="/" method="post">
-                    <div class="form__group">
-                        <input type="text" class="input input--dark input--user" placeholder="Your name">
+                    <form class="form" action="/" method="post">
+                        <div class="form__group">
+                            <input type="text" class="input input--dark input--user" placeholder="Your name">
+                        </div>
+                        <div class="form__group">
+                            <input type="tel" class="input input--dark input--phone" placeholder="Your phone">
+                        </div>
+                        <div class="form__group">
+                            <input type="email" class="input input--dark input--mail" placeholder="Your e-mail">
+                        </div>
+                        <button class="btn btn--block btn--orange" type="submit"><span>Call me back</span></button>
+                    </form>
+                    
+                    <div class="modal__footer">
+                        <h4 class="modal__footer-title">Our contacts</h4>
+                        <address class="modal__contacts">
+                            <p>New York, Street, ZIP code</p>
+                            <p>Phone: <a href="tel:+9948373123">+9948373123</a></p>
+                            <p>E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></p>
+                        </address>
                     </div>
-                    <div class="form__group">
-                        <input type="tel" class="input input--dark input--phone" placeholder="Your phone">
-                    </div>
-                    <div class="form__group">
-                        <input type="email" class="input input--dark input--mail" placeholder="Your e-mail">
-                    </div>
-                    <button class="btn btn--block btn--orange" type="submit"><span>Call me back</span></button>
-                </form>
-                
-                <div class="modal__footer">
-                    <h4 class="modal__footer-title">Our contacts</h4>
-                    <address class="modal__contacts">
-                        <p>New York, Street, ZIP code</p>
-                        <p>Phone: <a href="tel:+9948373123">+9948373123</a></p>
-                        <p>E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></p>
-                    </address>
+                    <button class="modal__close" type="button">
+                        <img src="/assets/img/close.svg" alt="Close">
+                    </button>
                 </div>
-                <button class="modal__close" type="button">
-                    <img src="/assets/img/close.svg" alt="Close">
-                </button>
             </div>
         </div>
     </div>
 
     <div class="modal" id="thanksModal">
         <div class="modal__inner">
-            <div class="modal__header">
-                <img class="modal__icon" src="/assets/img/tick.svg" alt="">
-                <h4 class="modal__title">Thanks for your request</h4>
-                <div class="modal__text">
-                    <p>We call you back as soon as possible!</p>
+            <div class="modal__content">
+                <div class="modal__header">
+                    <img class="modal__icon" src="/assets/img/tick.svg" alt="">
+                    <h4 class="modal__title">Thanks for your request</h4>
+                    <div class="modal__text">
+                        <p>We call you back as soon as possible!</p>
+                    </div>
+        
+                    
+                    <div class="modal__footer">
+                        <h4 class="modal__footer-title">Our contacts</h4>
+                        <address class="modal__contacts">
+                            <p>New York, Street, ZIP code</p>
+                            <p>Phone: <a href="tel:+9948373123">+9948373123</a></p>
+                            <p>E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></p>
+                        </address>
+                    </div>
+                    <button class="modal__close" type="button">
+                        <img src="/assets/img/close.svg" alt="Close">
+                    </button>
                 </div>
-    
-                
-                <div class="modal__footer">
-                    <h4 class="modal__footer-title">Our contacts</h4>
-                    <address class="modal__contacts">
-                        <p>New York, Street, ZIP code</p>
-                        <p>Phone: <a href="tel:+9948373123">+9948373123</a></p>
-                        <p>E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></p>
-                    </address>
-                </div>
-                <button class="modal__close" type="button">
-                    <img src="/assets/img/close.svg" alt="Close">
-                </button>
             </div>
         </div>
     </div>
 
-</body>
+<!-- JavaScript -->
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/app.js"></script>
 
+</body>
 </html>

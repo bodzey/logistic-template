@@ -782,7 +782,7 @@ ol {
 	z-index: 2000;
 }
 .modal.show {
-	display: flex;
+	display: block;
 }
 .modal__inner {
 	display: flex;
@@ -799,6 +799,9 @@ ol {
 
 	background-color: #fff;
 	border-radius: 5px;
+	transform: scale(0.5);
+	opacity: 0;
+	transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .modal__header {
@@ -867,10 +870,13 @@ ol {
 
 	cursor: pointer;
 
-	transition: transform 0.2s linear;
+	transition: transform 0.1s linear;
+}
+.modal__close:focus {
+	outline: none;
 }
 .modal__close:hover {
-	transform: scale(1.4);
+	transform: scale(1.2);
 }
 
 /* Main */

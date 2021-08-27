@@ -44,6 +44,9 @@ ol {
 .text-center {
 	text-align: center;
 }
+.slick-slide:focus {
+	outline: none;
+}
 /* Page */
 .page {
 	display: flex;
@@ -117,9 +120,9 @@ ol {
 
 /* Intro */
 .intro {
-	background: #000 url(../img/intro.jpg) center no-repeat;
-	background-size: cover;
 	margin-bottom: 30px;
+	position: relative;
+	background-color: #000;
 }
 .intro--blog {
 	height: 350px;
@@ -133,11 +136,68 @@ ol {
 	background: #000 url(../img/text-bg.jpg) center no-repeat;
 	background-size: cover;
 }
+.intro__slider {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	position: absolute;
+
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.intro__slider-photo {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.intro__slider-arrows {
+	position: absolute;
+	bottom: 30px;
+	left: 430px;
+}
+.intro__slider-btn {
+	width: 0;
+	height: 0;
+	padding: 0;
+	margin: 0 4px;
+
+	font-size: 0;
+	color: transparent;
+	cursor: pointer;
+
+	border-style: solid;
+
+	background: none;
+}
+.intro__slider-btn:focus {
+	outline: none;
+}
+.intro__slider-btn--prev {
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #ffffff transparent transparent;
+}
+
+.intro__slider-btn--next {
+	border-width: 10px 0 10px 10px;
+	border-color: transparent transparent transparent #ffffff;
+}
+.intro__slider .slick-list,
+.intro__slider .slick-track {
+	height: 100%;
+}
 .intro__inner {
-	display: flex;
 	height: 600px;
+	display: flex;
+
 	align-items: flex-end;
 	justify-content: space-between;
+	position: relative;
+	z-index: 2;
 }
 .intro__text {
 	text-align: right;
@@ -168,6 +228,7 @@ ol {
 
 	transform: translateY(-50%);
 }
+
 /* Request Form */
 .request-form {
 	width: 100%;
@@ -438,6 +499,8 @@ ol {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+
+	padding: 20px 0;
 }
 .clients__list li {
 	margin-right: 50px;
@@ -451,7 +514,83 @@ ol {
 .reviews {
 	position: relative;
 }
+.reviews:before,
+.reviews:after {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	z-index: 3;
+}
 .reviews:before {
+	left: 0;
+
+	background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+}
+.reviews:after {
+	right: 0;
+
+	background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+}
+.reviews .slick-list {
+	z-index: 2;
+}
+.reviews .slick-dots {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	z-index: 3;
+}
+.reviews .slick-dots li {
+	margin: 0 10px 10px;
+}
+.reviews .slick-dots li.slick-active button {
+	background-color: #004af2;
+	border-color: rgba(0, 74, 242, 0.11);
+
+	/* box-shadow: 0 0 0 5px rgba(0, 74, 242, 0.1); */
+}
+.reviews .slick-dots button {
+	box-sizing: content-box;
+	display: block;
+	width: 10px;
+	height: 10px;
+	padding: 0;
+
+	background-color: #dbdbdb;
+	background-clip: content-box;
+	border: 5px solid transparent;
+	border-radius: 50%;
+	cursor: pointer;
+
+	color: transparent;
+	font-size: 0;
+
+	transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.reviews .slick-dots button:focus {
+	outline: none;
+}
+.reviews__item {
+	padding: 15px 10px;
+	position: relative;
+}
+
+.reviews__header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+	position: relative;
+	z-index: 2;
+}
+.reviews__header:before {
 	content: "";
 	display: block;
 	width: 92px;
@@ -460,16 +599,9 @@ ol {
 	background: url(../img/lines.svg) no-repeat;
 
 	position: absolute;
-	top: -15px;
-	left: 0;
+	top: -13px;
+	left: 2px;
 	z-index: 1;
-}
-.reviews__header {
-	display: flex;
-	align-items: center;
-	margin-bottom: 30px;
-	position: relative;
-	z-index: 2;
 }
 .reviews__header-content {
 	flex-grow: 1;
@@ -479,6 +611,9 @@ ol {
 .reviews__photo {
 	width: 100px;
 	height: 100px;
+
+	position: relative;
+	z-index: 2;
 
 	border-radius: 50%;
 	border: 5px solid #fff;
@@ -494,6 +629,7 @@ ol {
 	color: #2c2c2c;
 }
 .reviews__content {
+	width: 100%;
 	color: #585858;
 	font-size: 16px;
 	line-height: 1.8;
@@ -1174,6 +1310,12 @@ ol {
 		text-align: center;
 		margin: 0 auto;
 	}
+	/* Modals */
+
+	.modal__close {
+		right: 0;
+		top: -30px;
+	}
 }
 @media (max-width: 575px) {
 	.intro__title {
@@ -1253,13 +1395,6 @@ ol {
 	/* Footer */
 	.footer {
 		background-position: left -120px bottom -80px, right -120px bottom -80px;
-	}
-
-	/* Modals */
-
-	.modal__close {
-		right: 0;
-		top: -30px;
 	}
 }
 

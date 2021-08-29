@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=PT+Sans:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/aos.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,8 +34,12 @@
                     <a class="nav__link" href="#">Contact Us</a>
                 </nav>
 
-                <button class="burger" type="button">
-                    <img class="burger__icon" src="/assets/img/burger.svg" alt="">
+                <button class="burger" type="button" id="navToggle">
+                    <span class="burger__line">1</span>
+                    <span class="burger__line">2</span>
+                    <span class="burger__line">3</span>
+                    <span class="burger__line">4</span>
+                    
                 </button>
 
             </div>
@@ -44,20 +49,20 @@
     <div class="intro" id="intro">
 
         <div class="intro__slider" id="introSlider">
-            <div>
-                <img class="intro__slider-photo" src="/assets/img/intro.jpg" alt="">
+            <div class="slider-item">
+                <div class="intro__slider-item" style="background-image: url(/assets/img/intro.jpg)"></div>
             </div>
-            <div>
-                <img class="intro__slider-photo" src="/assets/img/text-bg.jpg" alt="">
+            <div class="slider-item">
+                <div class="intro__slider-item" style="background-image: url(/assets/img/text-bg.jpg)"></div>
             </div>
-            <div>
-                <img class="intro__slider-photo" src="/assets/img/blog-bg.jpg" alt="">
+            <div class="slider-item">
+                <div class="intro__slider-item" style="background-image: url(/assets/img/blog-bg.jpg)"></div>
             </div>
         </div>
 
         <div class="container">
             <div class="intro__inner">
-                <div class="request-form request-form--intro">
+                <div class="request-form request-form--intro" data-aos="fade-in">
                     <div class="request-form__header">
                         <h3 class="request-form__title">
                             Get Callback
@@ -517,6 +522,7 @@
 <!-- JavaScript -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
 <script src="/assets/js/slick.min.js"></script>
+<script src="/assets/js/aos.js"></script>
 <script src="/assets/js/app.js"></script>
 
 </body>

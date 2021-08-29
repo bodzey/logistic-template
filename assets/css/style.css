@@ -157,18 +157,18 @@ body.show-nav .header {
 }
 
 .burger__line:nth-child(1),
-.burger__line:nth-child(3) {
+.burger__line:nth-child(4) {
 	transform-origin: right;
 	transition: width 0.2s ease-out;
 }
 
 .burger.active .burger__line:nth-child(1),
-.burger.active .burger__line:nth-child(3) {
+.burger.active .burger__line:nth-child(4) {
 	width: 0;
 }
 
 .burger.active .burger__line:nth-child(2),
-.burger.active .burger__line:nth-child(4) {
+.burger.active .burger__line:nth-child(3) {
 	position: absolute;
 	left: 0;
 	top: 50%;
@@ -180,7 +180,7 @@ body.show-nav .header {
 	transform: rotate(45deg);
 }
 
-.burger.active .burger__line:nth-child(4) {
+.burger.active .burger__line:nth-child(3) {
 	transform: rotate(-45deg);
 }
 
@@ -210,7 +210,7 @@ body.show-nav .header {
 	height: 100%;
 	overflow: hidden;
 
-	background: #04222a url("../images/intro-bg.jpg") no-repeat center;
+	background: #04222a url("../img/intro-bg.jpg") no-repeat center;
 	background-size: cover;
 
 	position: absolute;
@@ -1272,6 +1272,7 @@ body.show-nav .header {
 		height: 50px;
 	}
 	.nav {
+		transform: translateX(100%);
 		width: 100%;
 		min-height: calc(100vh - 50px);
 		flex-direction: column;
@@ -1284,12 +1285,13 @@ body.show-nav .header {
 		left: 0;
 		right: 0;
 		z-index: 1;
+		opacity: 0;
 
-		transform: translateX(100%);
-		transition: transform 0.2s ease-out;
+		transition: transform 0.2s ease-out, opacity 0.1s ease-out;
 	}
 	.nav.show {
 		transform: translateX(0);
+		opacity: 1;
 	}
 	.nav__link {
 		display: block;

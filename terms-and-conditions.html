@@ -4,38 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=PT+Sans:wght@400;700&display=swap&subset=cyrillic"
         rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/aos.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Logistic Design</title>
 </head>
 
 <body>
 <div class="page">   
-    <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <a href="/index.html"><img src="/assets/img/logo.svg" alt="" class="logo"></a>
+<header class="header" id="header">
+    <div class="container">
+        <div class="header__inner">
+                <a href="/index.html"><img src="/assets/img/logo.svg" alt="" class="logo img"></a>
+            <nav class="nav" id="nav">
+                <a class="nav__link" href="#" data-scroll="#services">Services</a>
+                <a class="nav__link" href="#" data-scroll="#clients">Clients</a>
+                <a class="nav__link" href="#" data-scroll="#benefits">Benefits</a>
+                <a class="nav__link" href="#" data-scroll="#team">Team</a>
+                <a class="nav__link" href="#" data-scroll="#mission">Our Mission</a>
+                <a class="nav__link" href="#" data-scroll="#news">News</a>
+                <a class="nav__link" href="/blog.html">Blog</a>
+                <a class="nav__link" href="#">Contact Us</a>
+            </nav>
 
-                <nav class="nav">
-                    <a class="nav__link" href="/index.html">Home page</a>
-                    <a class="nav__link" href="/blog.html">Blog</a>
-                    <a class="nav__link" href="/privacy-policy.html">Privacy Policy</a>
-                    <a class="nav__link active" href="/terms-and-conditions.html">Terms &amp; Conditions</a>
-                </nav>
+            <button class="burger" type="button" id="navToggle">
+                <span class="burger__line">1</span>
+                <span class="burger__line">2</span>
+                <span class="burger__line">3</span>
+                <span class="burger__line">4</span>
 
-                <button class="burger" type="button">
-                    <img class="burger__icon" src="/assets/img/burger.svg" alt="">
-                </button>
+            </button>
 
-            </div>
         </div>
-        <!--/container -->
-    </header>
+    </div>
+    <!--/container -->
+</header>
 
 
     <!-- Intro -->
@@ -104,7 +115,9 @@
 </div>
 
 <!-- JavaScript -->
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.slim.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/slick.min.js"></script>
+<script src="/assets/js/aos.js"></script>
 <script src="/assets/js/app.js"></script>
 
 </body>

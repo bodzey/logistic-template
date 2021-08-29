@@ -1252,6 +1252,10 @@ body.show-nav .header {
 	.clients__list li {
 		max-width: 130px;
 	}
+	.reviews__content {
+		font-size: 14px;
+		line-height: 1.2;
+	}
 	/* Main */
 	.main__col--left {
 		width: 55%;
